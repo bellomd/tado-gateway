@@ -1,0 +1,22 @@
+server:
+  servlet:
+    context-path: /api/v1
+  port: 8080
+  
+security:
+  oauth2:
+    client:
+      clientId: your_client_id
+      clientSecret: your_client_secret
+      scope: your_scopes
+      grantType: grant_type
+      accessTokenUri: https://auth.tado.com/oauth/token
+    
+tado:
+  api:
+    userInfoUri: https://my.tado.com/api/v2/me # GET the current user details
+    homeZonesInfoUri: https://my.tado.com/api/v2/homes/{home_id}/zones # GET home zones details
+    zoneStateUri: https://my.tado.com/api/v2/homes/{home_id}/zones/{zone_id}/state # GET zone state
+    overlayUri: https://my.tado.com/api/v2/homes/{home_id}/zones/{zone_id}/overlay # GET zone overlay, PUT update zone overlay, DELETE zone overlay
+
+      
